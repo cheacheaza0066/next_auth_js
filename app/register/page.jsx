@@ -87,6 +87,7 @@ export default function Register() {
         />
         <TextField
           onChange={(e) => setEmail(e.target.value)}
+          type='email'
           id="email"
           label="Email"
           variant="outlined"
@@ -94,6 +95,7 @@ export default function Register() {
         />
         <TextField
           onChange={(e) => setPassword(e.target.value)}
+          type='password'
           id="password"
           label="Password"
           variant="outlined"
@@ -101,6 +103,8 @@ export default function Register() {
         />
         <TextField
           onChange={(e) => setConfirmPassword(e.target.value)}
+          type='password'
+
           id="confirm-password"
           label="Confirm-password"
           variant="outlined"

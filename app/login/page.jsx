@@ -47,8 +47,8 @@ export default function Login() {
     <div className='container mx-auto flex flex-col items-center justify-center'>
     <h3 className='text-xl my-6'>Login page</h3>
     <form onSubmit={handleSubmit}  className='flex flex-col w-2/4 space-y-6'> 
-        <TextField onChange={(e)=> setEmail(e.target.value)} id="email" label="Email" variant="outlined" className=''/>
-        <TextField onChange={(e)=> setPassword(e.target.value)} id="password" label="Password" variant="outlined" className=''/>
+        <TextField onChange={(e)=> setEmail(e.target.value)} type='email' id="email" label="Email" variant="outlined" className=''/>
+        <TextField onChange={(e)=> setPassword(e.target.value)} type='password' id="password" label="Password" variant="outlined" className=''/>
         <Button type='submit' color="success" variant="contained">Sign in</Button>
 
     </form>
