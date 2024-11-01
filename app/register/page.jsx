@@ -76,7 +76,7 @@ export default function Register() {
 
   return (
     <div className='container mx-auto flex flex-col items-center justify-center'>
-      <h3 className='text-xl my-6'>Register Page</h3>
+      <h3 className='text-xl my-6'>Register page</h3>
       <form onSubmit={handleSubmit} action="" className='flex flex-col w-2/4 space-y-4'>
       <TextField
           onChange={(e) => setName(e.target.value)}
