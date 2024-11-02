@@ -5,8 +5,9 @@ import { Button ,TextField } from '@mui/material';
 import Swal from "sweetalert2";
 import { useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
-
-
+import GitHubIcon from "@mui/icons-material/GitHub";
+import GoogleIcon from "@mui/icons-material/Google";
+import { signIn } from 'next-auth/react';
 export default function Register() {
     const [name,setName] = useState("");
     const [email, setEmail] = useState("");
@@ -114,6 +115,35 @@ export default function Register() {
           Sign up
         </Button>
       </form>
+      <div className="flex flex-col space-y-4 mt-6">
+        <Button
+          variant="outlined"
+          startIcon={<GitHubIcon />}
+          onClick={() => signIn("github")}
+          style={{
+            color: "#333",
+            borderColor: "#333",
+            fontWeight: "bold",
+            textTransform: "none",
+          }}
+        >
+          Sign up with GitHub
+        </Button>
+        <Button
+          variant="outlined"
+          startIcon={<GoogleIcon />}
+          onClick={() => signIn("google")}
+          style={{
+            color: "#DB4437",
+            borderColor: "#DB4437",
+            fontWeight: "bold",
+            textTransform: "none",
+          }}
+        >
+          Sign up with Google
+        </Button>
+      </div>
     </div>
+    
   )
 }

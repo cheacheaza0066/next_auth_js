@@ -7,7 +7,8 @@ import { signIn } from 'next-auth/react'
 import { useRouter, redirect } from 'next/navigation'
 import { useSession } from 'next-auth/react';
 import Swal from "sweetalert2";
-
+import GitHubIcon from '@mui/icons-material/GitHub';
+import GoogleIcon from '@mui/icons-material/Google';
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -52,6 +53,36 @@ export default function Login() {
         <Button type='submit' color="success" variant="contained">Sign in</Button>
 
     </form>
+    <div className='flex flex-col space-y-4 mt-6'>
+        <Button
+          variant="outlined"
+          startIcon={<GitHubIcon />}
+          onClick={() => signIn('github')}
+          style={{
+            color: '#333',
+            borderColor: '#333',
+            fontWeight: 'bold',
+            textTransform: 'none',
+          }}
+          className='py-2'
+        >
+          Sign in with GitHub
+        </Button>
+        <Button
+          variant="outlined"
+          startIcon={<GoogleIcon />}
+          onClick={() => signIn('google')}
+          style={{
+            color: '#DB4437',
+            borderColor: '#DB4437',
+            fontWeight: 'bold',
+            textTransform: 'none',
+          }}
+          className='py-2'
+        >
+          Sign in with Google
+        </Button>
+      </div>
     <div className='my-3'>
     <p>Already have account   <Link className='text-blue-600 hover:underline' href="/register">register page</Link>
     </p>
